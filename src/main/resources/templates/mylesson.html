@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>your Lesson</title>
+<style>
+    body{
+        background-color: #ACB1D6;
+    }
+    .datatable table .header{
+       background-color:#A0D8B3;
+    }
+    h2{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    h1{
+        border: black solid;
+        text-align: center;
+       font:500;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+
+    }
+
+    .datatable table .data{
+       background-color: #E5F9DB;
+    }
+    .demotable{
+        width: 100%;
+    }
+    iframe{
+        margin-left: 20%;
+    }
+    .ifaramediv{
+        border:white solid;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-right: 25%;
+    }
+
+    .commentpart form textarea{
+        width: 100%;
+         padding-bottom: 5%;
+        background-color:#C4DFDF;
+        border: black solid;
+    }
+    .commentpart form  input{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+       background-color: #A0D8B3; 
+        border: black solid;
+        border-radius: 8px;
+        font-size: large;
+    }
+</style>
+</head>
+<body>
+    <h1><b>Lessons</b></h1>
+<div class="datatable">
+ <table border="1" class="demotable">
+  <thead>
+     <tr class="header">
+        
+        <th>lessonId</th>
+        <th>lessonName</th>
+        <th>Topics</th>
+        <th>Link</th>
+        <th>CourseID</th>
+        
+        
+     </tr>
+     </thead>
+     <tbody>
+     <tr  class="data" >
+        <td th:text="${lesson.lessonId}"> </td>
+         <td th:text="${lesson.lessonName}"></td>
+        <td th:text="${lesson.topics}"></td>      
+        <td th:text="${lesson.link}"></td>
+         <td th:text="${lesson.course.courseId}"></td>
+        
+     </tr>
+     </tbody>
+  </table><br>
+  </div>
+  <div class="ifaramediv">
+     <iframe width="560" height="315" src=""  th:src="${lesson.link}"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div><br><br>
+  <h2><b>Add your comments</b></h2>
+  <div class="commentpart">
+    <form action="/addcomment" method="post">
+      <textarea  name="comment"></textarea> <br>
+      <input type="submit" value="ADD COMMENT">  
+    </form>
+  </div>
+  <div>
+  <table border="1">
+    <tr><th>comments</th></tr>
+    <tr th:each="comments:${comm}" > 
+    <td th:text="${comments.comment}"></td>
+    	</tr> 
+  
+  </table>
+  </div>
+
+</body>
+</html>

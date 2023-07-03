@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter LessonID</title>
+<style>
+    body{
+        background-color:#B3C890;
+    }
+    form{
+        text-align: center;
+        margin-top: 15%;
+        border: black solid;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding: 5%;
+        border-radius: 30px;
+        background-color: #73A9AD;
+    }
+    form  #inputid{
+        padding: 1%;
+        border-radius: 8px;
+        
+    }
+    form  #inputbut{
+        padding: 1%;
+        border-radius: 8px;
+        font-size: medium;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+
+</style>
+</head>
+<body>
+  <form action="/viewlesson" method="post">
+    <h1>Lesson ID</h1>
+    <input type="number" name="lessonId" id="inputid"><br><br>
+    <input type="submit" value="Get lesson" id="inputbut">
+  </form>
+
+</body>
+</html>

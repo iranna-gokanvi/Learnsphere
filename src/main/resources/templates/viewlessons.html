@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <h1> Courses</h1>
+  <table border="1">
+  <thead>
+     <tr>
+        <th>course id</th>
+        <th>course name</th>
+        <th>course price</th>
+        <th>lessons</th>
+        
+     </tr>
+     </thead>
+     <tbody>
+     <tr th:each="course:${courses}"  >
+        <td th:text="${course.courseId}"></td>
+        <td th:text="${course.courseName}"></td>      
+        <td th:text="${course.coursePrice}"></td>
+        <td th:text="${course.lesson}"></td>
+     </tr>
+     </tbody>
+  </table>
+</body>
+</html>

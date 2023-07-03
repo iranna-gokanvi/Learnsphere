@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Purchase Course</title>
+<style>
+    body{
+         background-image:url('image/lesson.jpg');
+        background-size:100% 100%;
+        height:500px;
+    }
+
+    h1{
+        text-align: center;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       border: black solid;
+       background-color:white;
+    }
+  table td a{
+  text-decoration:none;
+}
+
+  table{
+    width: 100%;
+  }
+
+  table tr th{
+    background-color:#79E0EE;
+  }
+  table tr td{
+    background-color: #98EECC;
+    text-align: center;
+  }
+
+  table tr td button:hover{
+   background-color: rgb(207, 72, 23);
+   
+  }
+   
+  table tr td button a:hover{
+   color: white;
+   
+  }
+</style>
+</head>
+<body>
+  <h1>Purchase Courses</h1>
+  <table border="1">
+     <tr >
+       <th>CourseId</th>
+       <th>CourseName</th>
+       <th>CoursePrice</th>
+       <th>Lessons</th>
+       <th>Purchase</th>
+     </tr>
+     <tr th:each="course:${courses}">
+       <td th:text="${course.courseId}"></td>
+       <td th:text="${course.courseName}" ></td>
+       <td th:text="${course.coursePrice}"></td>
+       <td th:text="${course.lesson}"></td>
+       <td><button><a href="/payment" >Buy Course</a></button></td>
+     </tr>
+  </table>
+</body>
+</html>
